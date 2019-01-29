@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:LiveScore.Converters"
+             x:Class="LiveScore.Views.TournamentPage"
+              Title="{Binding Title}"
+             x:Name="BrowseItemsPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:StringToImageSourceConverter x:Key="StringToImageSource" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="AddItem_Clicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="add.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout>
+        <SearchBar Placeholder="Search Tournament"  TextChanged="OnSearchBarTextChanged" />
+        <ListView x:Name="ItemsListView"
+                ItemsSource="{Binding Items}"
+                VerticalOptions="FillAndExpand"
+                HasUnevenRows="true"
+                RefreshCommand="{Binding LoadItemsCommand}"
+                IsPullToRefreshEnabled="true"
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                CachingStrategy="RecycleElement"
+                ItemSelected="OnItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" HeightRequest="50" Padding="5">
+                            <StackLayout
+                                    HorizontalOptions="Start"
+                                    VerticalOptions="Center"
+                                    Orientation="Horizontal">
+                                <Image Source="{Binding Image, Converter={StaticResource StringToImageSource}}" />
+                                <Label Text="{Binding Text}"
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemTextStyle}"
+                                FontSize="16" />
+                            </StackLayout>
+                            <StackLayout
+                                    HorizontalOptions="EndAndExpand"
+                                    VerticalOptions="Center"
+                                    Orientation="Horizontal">
+                                <Button Text="&#xf105;" FontSize="Large" TextColor="Black" FontAttributes="Bold">
+                                    <Button.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String"
+                                                    Android="fa-solid-900.ttf#Font Awesome 5 Free Regular"
+                                                    iOS="Font Awesome 5 Free" />
+                                    </Button.FontFamily>
+                                </Button>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
