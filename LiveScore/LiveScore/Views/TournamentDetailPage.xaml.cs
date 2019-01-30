@@ -5,13 +5,14 @@ using Xamarin.Forms.Xaml;
 
 using LiveScore.Models;
 using LiveScore.ViewModels;
+using System.Collections.Generic;
 
 namespace LiveScore.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TournamentDetailPage : ContentPage
     {
-        TournamentDetailViewModel viewModel;
+        private TournamentDetailViewModel viewModel;
 
         public TournamentDetailPage(TournamentDetailViewModel viewModel)
         {
