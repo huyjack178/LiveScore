@@ -34,23 +34,25 @@
                 ItemSelected="OnItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Orientation="Horizontal" HeightRequest="50" Padding="5">
+                    <ViewCell Height="35">
+                        <StackLayout Orientation="Horizontal" HeightRequest="50">
                             <StackLayout
                                     HorizontalOptions="Start"
                                     VerticalOptions="Center"
                                     Orientation="Horizontal">
                                 <Image Source="{Binding Image, Converter={StaticResource StringToImageSource}}" />
                                 <Label Text="{Binding Text}"
-                                LineBreakMode="NoWrap"
-                                Style="{DynamicResource ListItemTextStyle}"
-                                FontSize="16" />
+                                    LineBreakMode="NoWrap"
+                                    Style="{StaticResource labelStyle}"/>
                             </StackLayout>
                             <StackLayout
                                     HorizontalOptions="EndAndExpand"
                                     VerticalOptions="Center"
                                     Orientation="Horizontal">
-                                <Button Text="&#xf105;" FontSize="Large" TextColor="Black" FontAttributes="Bold">
+                                <Button Text="&#xf105;" 
+                                        FontSize="Large"
+                                        FontAttributes="Bold"
+                                        Style="{StaticResource btnStyle}">
                                     <Button.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String"
                                                     Android="fa-solid-900.ttf#Font Awesome 5 Free Regular"

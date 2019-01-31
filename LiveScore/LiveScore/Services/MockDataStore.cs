@@ -29,7 +29,6 @@ namespace LiveScore.Services
                 new Tournament { Id = Guid.NewGuid().ToString(), Text = "V-League", Description="This is an item description.",Image = "tab_feed.png" },
                 new Tournament { Id = Guid.NewGuid().ToString(), Text = "V-League", Description="This is an item description.",Image = "tab_feed.png" },
                 new Tournament { Id = Guid.NewGuid().ToString(), Text = "V-League", Description="This is an item description.",Image = "tab_feed.png" },
-                new Tournament { Id = Guid.NewGuid().ToString(), Text = "V-League", Description="This is an item description.",Image = "tab_feed.png" },
             };
 
             foreach (var item in mockItems)

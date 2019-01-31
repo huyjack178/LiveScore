@@ -9,15 +9,15 @@
             <Color x:Key="NavigationPrimary">#333333</Color>
             <Style TargetType="NavigationPage">
                 <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
-                <Setter Property="BarTextColor" Value="White" />
+                <Setter Property="BarTextColor" Value="#e6e6e6" />
             </Style>
-            <Style TargetType="Label">
+            <Style x:Key="labelStyle" TargetType="Label">
                 <Setter Property="FontSize" Value="Small" />
-                <Setter Property="TextColor" Value="White" />
+                <Setter Property="TextColor" Value="#e6e6e6" />
             </Style>
-            <Style TargetType="Button">
+            <Style  x:Key="btnStyle" TargetType="Button">
                 <Setter Property="FontSize" Value="Small" />
-                <Setter Property="TextColor" Value="White" />
+                <Setter Property="TextColor" Value="#e6e6e6" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>
