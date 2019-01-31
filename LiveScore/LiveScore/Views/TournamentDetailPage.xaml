@@ -16,8 +16,8 @@
             <ListView.GroupHeaderTemplate>
                 <DataTemplate>
                     <ViewCell Height="25">
-                        <FlexLayout Wrap="NoWrap"  AlignItems="Center" AlignContent="Center"  BackgroundColor="#313131">
-                            <Image  FlexLayout.Grow="1" Source="tab_feed.png" />
+                        <FlexLayout Wrap="NoWrap" JustifyContent="SpaceEvenly" AlignItems="Center" AlignContent="Center"  BackgroundColor="#313131">
+                            <Image FlexLayout.Grow="1" Source="championleague.png" />
                             <Label FlexLayout.Grow="8" Text="{Binding Key}" TextColor="White" VerticalOptions="Center" FlexLayout.AlignSelf="Center" />
                             <Button FlexLayout.Grow="1"
                                     Text="&#xf138;"
@@ -38,20 +38,20 @@
             </ListView.GroupHeaderTemplate>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell Height="35">
+                    <ViewCell Height="50">
                         <FlexLayout JustifyContent="SpaceBetween" AlignItems="Center" AlignContent="Center">
-                            <Label Text="FT" FlexLayout.Grow="1" />
-                            <FlexLayout Direction="Column"  FlexLayout.Grow="7">
+                            <Label Text="FT" FlexLayout.Grow="1" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                            <FlexLayout Direction="Column" FlexLayout.Grow="7" JustifyContent="Center">
                                 <Label Text="{Binding HomeTeamName}" />
                                 <Label Text="{Binding AwayTeamName}" />
                             </FlexLayout>
-                            <FlexLayout Direction="Column" FlexLayout.Grow="0.25" AlignItems="Start">
+                            <FlexLayout Direction="Column" FlexLayout.Grow="0.25" AlignItems="Start" JustifyContent="Center">
                                 <Label Text="{Binding HomeScore}" />
                                 <Label Text="{Binding AwayScore}" />
                             </FlexLayout>
                             <Button FlexLayout.Grow="0.75"
                                     Text="&#xf105;"
-                                    FontSize="Large" 
+                                    FontSize="Large"
                                     FontAttributes="Bold">
                                 <Button.FontFamily>
                                     <OnPlatform x:TypeArguments="x:String"
